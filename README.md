@@ -1,15 +1,61 @@
 # AlgoLens — AI-Powered Algorithm Complexity Analyzer
 
-A full-stack web application that analyzes algorithm complexity using AI. Paste any code snippet and get instant Big-O analysis, complexity graphs, and optimization suggestions.
-
-![AlgoLens](https://img.shields.io/badge/AlgoLens-v1.0.0-22c55e?style=flat-square)
+![AlgoLens](https://img.shields.io/badge/AlgoLens-v2.0.0-22c55e?style=flat-square)
 ![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47a248?style=flat-square)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?style=flat-square)
+![Railway](https://img.shields.io/badge/Backend-Railway-purple?style=flat-square)
+![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)
 
 ---
 
-## Features
+# 🚀 Live Demo
+
+### Frontend
+https://algo-complexity-visualizer.vercel.app/
+
+### Backend API
+https://ai-powered-algo-complexity-visualizer-production.up.railway.app/
+
+---
+
+# 📌 Overview
+
+AlgoLens is a full-stack AI-powered algorithm complexity analysis platform that enables users to analyze, visualize, benchmark, and optimize algorithms interactively.
+
+Users can paste code snippets in multiple programming languages and instantly receive:
+- Time complexity analysis
+- Space complexity estimation
+- AI-generated optimization suggestions
+- Interactive complexity visualizations
+- Benchmark graphs
+- Algorithm pattern detection
+- Historical analytics dashboard
+
+The platform combines modern frontend engineering, scalable backend architecture, AI-assisted analysis, and real-time visualization into a production-ready educational and developer tool.
+
+---
+
+# 🔥 Key Highlights
+
+- Full-stack MERN architecture
+- AI-powered complexity analysis
+- Interactive algorithm visualizations
+- Real-time benchmarking engine
+- JWT authentication system
+- Cloud deployment with Vercel + Railway
+- MongoDB Atlas integration
+- Responsive modern UI/UX
+- Production-ready API architecture
+- Real-time empirical benchmarking
+- PDF report generation
+- Protected REST APIs
+- Dynamic charts and dashboards
+
+---
+
+# ✨ Features
 
 - **AI-Powered Analysis** — Time & space complexity with GPT-based explanations
 - **Monaco Code Editor** — VS Code-grade editor with syntax highlighting for 10+ languages
@@ -24,291 +70,267 @@ A full-stack web application that analyzes algorithm complexity using AI. Paste 
 
 ---
 
-## Tech Stack
+# 🛠️ Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
 | Frontend | React 18, Vite, Tailwind CSS, Framer Motion |
 | Editor | Monaco Editor (@monaco-editor/react) |
 | Charts | Recharts |
-| State | Zustand (with persistence) |
+| State Management | Zustand |
 | Backend | Node.js, Express.js |
 | Database | MongoDB Atlas (Mongoose) |
-| Auth | JWT (jsonwebtoken + bcryptjs) |
-| AI | OpenRouter API (GPT-3.5/4 / Claude / Gemma) |
+| Authentication | JWT + bcryptjs |
+| AI Integration | OpenRouter API |
 | Routing | React Router v6 |
+| Deployment | Vercel + Railway |
 
 ---
 
-## Project Structure
+# ☁️ Deployment Architecture
 
+```txt
+Vercel (Frontend)
+        ↓
+Railway (Backend API)
+        ↓
+MongoDB Atlas (Database)
 ```
+
+---
+
+# 🌍 Production Deployment
+
+## Frontend Deployment (Vercel)
+
+```bash
+npm run build
+```
+
+Deploy the `dist/` folder to Vercel.
+
+Environment Variable:
+
+```env
+VITE_API_URL=https://ai-powered-algo-complexity-visualizer-production.up.railway.app
+```
+
+---
+
+## Backend Deployment (Railway)
+
+Environment Variables:
+
+```env
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+OPENROUTER_API_KEY=your_api_key
+FRONTEND_URL=https://algo-complexity-visualizer.vercel.app
+```
+
+Start Command:
+
+```bash
+npm start
+```
+
+---
+
+## Database
+
+MongoDB Atlas Cloud Database is used for:
+- Authentication
+- Analysis history
+- Dashboard analytics
+- User management
+- Persistent storage
+
+---
+
+# 📂 Project Structure
+
+```bash
 algo-analyzer/
-├── frontend/                  # React + Vite frontend
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── layout/        # AppLayout, sidebar navigation
-│   │   │   └── analyzer/      # ComplexityGraph, AnalysisResult
-│   │   ├── context/
-│   │   │   └── authStore.js   # Zustand auth store
-│   │   ├── pages/             # LandingPage, LoginPage, SignupPage,
-│   │   │                      # DashboardPage, AnalyzerPage,
-│   │   │                      # HistoryPage, AboutPage
-│   │   └── utils/
-│   │       ├── api.js         # Axios instance with interceptors
-│   │       └── complexity.js  # Complexity colors, graph data, samples
-│   ├── public/favicon.svg
-│   ├── index.html
-│   ├── vite.config.js
-│   └── tailwind.config.js
-│
-├── backend/                   # Node.js + Express backend
-│   ├── config/
-│   │   └── database.js        # MongoDB connection
-│   ├── controllers/
-│   │   ├── authController.js  # register, login, getMe
-│   │   ├── analysisController.js  # analyzeCode, getAnalysis, delete
-│   │   └── historyController.js   # getHistory, getStats
-│   ├── middleware/
-│   │   ├── auth.js            # JWT protect middleware
-│   │   └── errorHandler.js    # Global error handler
-│   ├── models/
-│   │   ├── User.js            # User schema (bcrypt hashing)
-│   │   └── Analysis.js        # Analysis results schema
-│   ├── routes/
-│   │   ├── auth.js
-│   │   ├── analysis.js
-│   │   └── history.js
-│   ├── services/
-│   │   └── aiService.js       # OpenRouter AI + static fallback
-│   └── server.js              # Express app entry point
-│
-├── .env.example               # Environment variable template
+├── frontend/
+├── backend/
 └── README.md
 ```
 
 ---
 
-## Quick Start
+# ⚙️ Installation
 
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-- MongoDB Atlas account (free tier works)
-- OpenRouter API key (optional — static analysis works without it)
-
----
-
-### 1. Clone / Extract
+## Clone Repository
 
 ```bash
-# If downloaded as ZIP:
-unzip algo-analyzer.zip
-cd algo-analyzer
+git clone https://github.com/manoj-cyb-45/ai-powered-algo-complexity-visualizer.git
+
+cd ai-powered-algo-complexity-visualizer
 ```
 
 ---
 
-### 2. Backend Setup
+# 🔧 Backend Setup
 
 ```bash
 cd backend
+
 npm install
-cp .env.example .env
 ```
 
-Edit `backend/.env`:
+Create `.env`
 
 ```env
 PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/algo-analyzer
-JWT_SECRET=your_random_secret_here
-OPENROUTER_API_KEY=sk-or-...   # Get from https://openrouter.ai/keys
-AI_MODEL=openai/gpt-3.5-turbo
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret
+OPENROUTER_API_KEY=your_api_key
 FRONTEND_URL=http://localhost:5173
 ```
 
-Start the backend:
-
-```bash
-npm run dev    # Development (nodemon)
-# or
-npm start      # Production
-```
-
-Server runs at: **http://localhost:5000**
-
----
-
-### 3. Frontend Setup
-
-```bash
-cd frontend
-npm install
-cp .env.example .env
-```
-
-Edit `frontend/.env`:
-
-```env
-VITE_API_URL=http://localhost:5000/api
-```
-
-Start the frontend:
+Run backend:
 
 ```bash
 npm run dev
 ```
 
-App runs at: **http://localhost:5173**
-
 ---
 
-## Getting API Keys
-
-### MongoDB Atlas (Free)
-1. Go to https://cloud.mongodb.com
-2. Create a free cluster
-3. Create a database user
-4. Get your connection string
-5. Replace in `MONGODB_URI`
-
-### OpenRouter API (AI Analysis)
-1. Go to https://openrouter.ai/keys
-2. Create an account and generate an API key
-3. Add to `OPENROUTER_API_KEY`
-4. Choose a model in `AI_MODEL`:
-   - `openai/gpt-3.5-turbo` (affordable, fast)
-   - `openai/gpt-4` (most accurate)
-   - `anthropic/claude-3-haiku` (fast)
-   - `google/gemma-2-9b-it:free` (free tier)
-
-> **Note:** If no API key is configured, the app uses a built-in static analysis engine as fallback. It detects loops, recursion, sorting, and nested patterns without AI.
-
----
-
-## API Endpoints
-
-### Auth
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login user |
-| GET | `/api/auth/me` | Get current user (protected) |
-
-### Analysis
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/analysis/analyze` | Analyze code complexity (protected) |
-| GET | `/api/analysis/:id` | Get single analysis (protected) |
-| DELETE | `/api/analysis/:id` | Delete analysis (protected) |
-
-### History
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/history` | Paginated history (protected) |
-| GET | `/api/history/stats` | Complexity stats (protected) |
-
----
-
-## Pages
-
-| Route | Description |
-|-------|-------------|
-| `/` | Landing page with hero, features, CTA |
-| `/login` | User login |
-| `/signup` | User registration |
-| `/dashboard` | Stats, complexity distribution, recent activity |
-| `/analyzer` | Monaco editor + AI analysis results |
-| `/history` | Browse and manage past analyses |
-| `/about` | Big-O reference and tech stack |
-
----
-
-## Production Deployment
-
-### Backend (Railway / Render / Heroku)
+# 💻 Frontend Setup
 
 ```bash
-# Set environment variables in your platform dashboard
-# Then deploy with:
-npm start
+cd frontend
+
+npm install
 ```
 
-### Frontend (Vercel / Netlify)
+Create `.env`
+
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+Run frontend:
 
 ```bash
-# Build:
-npm run build
-
-# Deploy the /dist folder
-# Set VITE_API_URL to your backend URL
+npm run dev
 ```
 
 ---
 
-## Environment Variables Reference
+# 📊 API Endpoints
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `PORT` | No | Server port (default: 5000) |
-| `MONGODB_URI` | Yes | MongoDB Atlas connection string |
-| `JWT_SECRET` | Yes | Secret for signing JWTs |
-| `JWT_EXPIRES_IN` | No | Token expiry (default: 7d) |
-| `FRONTEND_URL` | Yes | Frontend origin for CORS |
-| `OPENROUTER_API_KEY` | No | OpenRouter API key (AI features) |
-| `AI_MODEL` | No | OpenRouter model string |
+## Authentication
+
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/auth/register` |
+| POST | `/api/auth/login` |
+| GET | `/api/auth/me` |
 
 ---
 
-## License
+## Analysis
 
-MIT — free to use, modify, and distribute.
+| Method | Endpoint |
+|--------|----------|
+| POST | `/api/analysis/analyze` |
+| GET | `/api/analysis/:id` |
+| DELETE | `/api/analysis/:id` |
 
 ---
 
-## v2 — Visualizer Module (New Features)
+## History
 
-### New Page: `/visualizer`
+| Method | Endpoint |
+|--------|----------|
+| GET | `/api/history` |
+| GET | `/api/history/stats` |
 
-A complete algorithm visualization and benchmarking suite, accessible from the sidebar.
+---
 
-#### Features Added
+# 📈 Visualizer Module
 
-| # | Feature | Details |
-|---|---------|---------|
-| 1 | **Algorithm Visualizer** | Animated array bars for Linear Search, Binary Search, Bubble Sort, Merge Sort, Quick Sort |
-| 2 | **Input Generator** | Random / Sorted / Reverse / Nearly Sorted arrays, slider + presets + manual input (up to 1M elements) |
-| 3 | **Real-Time Empirical Benchmarking** | `performance.now()` high-precision timing, operation counter, estimated memory |
-| 4 | **Live Benchmark Charts** | Recharts line charts that update in real-time as each data point is measured |
-| 5 | **Theoretical Overlays** | O(1), O(log n), O(n), O(n log n), O(n²) dashed curves auto-scaled to empirical data |
-| 6 | **Best / Average / Worst Case Toggle** | Generates appropriate datasets per algorithm and case type |
-| 7 | **PDF Report Download** | jsPDF + jspdf-autotable: configuration, timing, benchmark table, comparison table, optimization notes |
-| 8 | **Comparative Analysis** | Side-by-side runtime curves and bar charts for Search vs Search, Sort vs Sort, or All algorithms |
+## Features Included
 
-#### New Files
+- Linear Search Visualization
+- Binary Search Visualization
+- Bubble Sort Animation
+- Merge Sort Visualization
+- Quick Sort Visualization
+- Complexity Benchmark Charts
+- Empirical vs Theoretical Comparison
+- PDF Report Export
+- Comparative Runtime Analysis
+- Dynamic Input Generator
+- Best/Average/Worst Case Benchmarking
 
-```
-frontend/src/
-├── pages/
-│   └── VisualizerPage.jsx          ← Main visualizer page (3 tabs)
-├── components/visualizer/
-│   ├── AlgorithmVisualizer.jsx     ← Animated array bars + color legend
-│   ├── BenchmarkChart.jsx          ← Empirical curve + theoretical overlays
-│   ├── CompareChart.jsx            ← Multi-algorithm comparison charts
-│   ├── InputGenerator.jsx          ← Slider, presets, array type, case type
-│   └── StatsPanel.jsx              ← Time / ops / memory / complexity badges
-└── utils/
-    ├── algorithms.js               ← Real implementations + benchmarkAlgorithm()
-    └── pdfReport.js                ← jsPDF report generator
+---
 
-```
+# 🔒 Security Features
 
-#### New Dependencies Added
+- JWT Authentication
+- Protected Routes
+- Rate Limiting
+- Secure Password Hashing
+- Environment Variable Protection
+- CORS Security
+- API Validation
+- Global Error Handling
 
-```json
-"jspdf": "^2.5.1",
-"jspdf-autotable": "^3.8.2"
-```
+---
 
+# 📸 Screenshots
+
+Add screenshots for:
+- Dashboard
+- Analyzer
+- Visualizer
+- Benchmark Charts
+- Authentication Pages
+- Complexity Graphs
+
+---
+
+# 🚀 Future Improvements
+
+- Docker Support
+- CI/CD Pipelines
+- Kubernetes Deployment
+- Dark/Light Themes
+- Advanced AI Models
+- Multi-user Collaboration
+- Leaderboards
+- Algorithm Recommendation Engine
+- Exportable Benchmark Reports
+
+---
+
+# 📜 License
+
+Licensed under the Apache License 2.0.
+
+Copyright 2026 Manoj Kumar P
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this project except in compliance with the License.
+
+You may obtain a copy of the License at:
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+See the License for the specific language governing permissions and
+limitations under the License.
+
+---
+
+# 👨‍💻 Author
+
+### Manoj Kumar P
+
+GitHub:
+https://github.com/manoj-cyb-45
