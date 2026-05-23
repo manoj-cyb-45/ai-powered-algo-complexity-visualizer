@@ -14,7 +14,9 @@ import InputGenerator from '../components/visualizer/InputGenerator'
 import BenchmarkChart from '../components/visualizer/BenchmarkChart'
 import CompareChart from '../components/visualizer/CompareChart'
 import StatsPanel from '../components/visualizer/StatsPanel'
+
 import CustomSection from '../components/custom/CustomSection'
+
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 const ALGO_KEYS = Object.keys(ALGO_META)
@@ -23,11 +25,12 @@ const ALGO_FNS = {
   linearSearch, binarySearch, bubbleSort, mergeSort, quickSort
 }
 
+
 const TABS = [
-  { id: 'visualize', label: '▶ Visualize',    icon: '◈' },
-  { id: 'benchmark', label: '📊 Benchmark',   icon: '⬡' },
-  { id: 'compare',   label: '⚖ Compare',      icon: '◫' },
-  { id: 'custom',    label: '⌨ Custom Lab',   icon: '✦' },
+  { id: 'visualize', label: '▶ Visualize', icon: '◈' },
+  { id: 'benchmark', label: '📊 Benchmark', icon: '⬡' },
+  { id: 'compare', label: '⚖ Compare', icon: '◫' },
+  { id: 'custom', label: '⌨ Custom Lab', icon: '✦' },
 ]
 
 const SPEEDS = [
@@ -271,11 +274,10 @@ export default function VisualizerPage() {
               key={key}
               onClick={() => setAlgorithm(key)}
               disabled={isRunning || isBenchmarking}
-              className={`px-4 py-2 rounded-xl border text-sm transition-all disabled:opacity-50 ${
-                algorithm === key
-                  ? 'border-2 font-display font-bold'
-                  : 'glass border-white/10 text-gray-400 hover:border-white/20'
-              }`}
+              className={`px-4 py-2 rounded-xl border text-sm transition-all disabled:opacity-50 ${algorithm === key
+                ? 'border-2 font-display font-bold'
+                : 'glass border-white/10 text-gray-400 hover:border-white/20'
+                }`}
               style={algorithm === key ? { borderColor: m.color, color: m.color, background: m.color + '18' } : {}}
             >
               {m.label}
@@ -291,13 +293,12 @@ export default function VisualizerPage() {
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
             disabled={(isRunning || isBenchmarking) && tab.id !== activeTab}
-            className={`px-4 py-2 text-sm rounded-lg transition-all disabled:opacity-50 font-display ${
-              activeTab === tab.id
-                ? tab.id === 'custom'
-                  ? 'bg-purple-500/15 text-purple-400 border border-purple-500/20'
-                  : 'bg-cyber-500/15 text-cyber-400 border border-cyber-500/20'
-                : 'text-gray-400 hover:text-white'
-            }`}
+            className={`px-4 py-2 text-sm rounded-lg transition-all disabled:opacity-50 font-display ${activeTab === tab.id
+              ? tab.id === 'custom'
+                ? 'bg-purple-500/15 text-purple-400 border border-purple-500/20'
+                : 'bg-cyber-500/15 text-cyber-400 border border-cyber-500/20'
+              : 'text-gray-400 hover:text-white'
+              }`}
           >
             {tab.label}
           </button>
@@ -327,11 +328,10 @@ export default function VisualizerPage() {
                     key={s.label}
                     onClick={() => setSpeed(i)}
                     disabled={isRunning}
-                    className={`flex-1 py-1.5 text-xs rounded-lg border transition-all disabled:opacity-40 ${
-                      speed === i
-                        ? 'bg-cyber-500/15 border-cyber-500/30 text-cyber-400'
-                        : 'glass border-white/5 text-gray-400'
-                    }`}
+                    className={`flex-1 py-1.5 text-xs rounded-lg border transition-all disabled:opacity-40 ${speed === i
+                      ? 'bg-cyber-500/15 border-cyber-500/30 text-cyber-400'
+                      : 'glass border-white/5 text-gray-400'
+                      }`}
                   >
                     {s.label}
                   </button>
