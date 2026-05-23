@@ -210,11 +210,71 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-8 px-6 text-center">
-        <p className="text-gray-600 text-sm font-body">
-          © 2024 AlgoLens · AI-Powered Algorithm Complexity Analyzer
-        </p>
-      </footer>
+      <footer className="border-t border-white/5 py-8 px-6 bg-black/20 backdrop-blur-sm">
+  <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+
+    {/* Left Section */}
+    <div className="text-center md:text-left">
+      <h3 className="text-cyan-400 font-bold text-xl tracking-wide">
+        AlgoLens v2.0
+      </h3>
+
+      <p className="text-gray-500 text-sm mt-1 max-w-md">
+        Interactive Algorithm Visualization & Complexity Analysis Platform
+        with Custom Algorithm Execution and Animated Learning Experience.
+      </p>
+    </div>
+
+    {/* Center Section */}
+    <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
+      <span>Custom Visualizer</span>
+      <span className="text-cyan-500">•</span>
+
+      <span>Complexity Analyzer</span>
+      <span className="text-cyan-500">•</span>
+
+      <span>Educational Lab</span>
+      <span className="text-cyan-500">•</span>
+
+      <span>Algorithm Playground</span>
+    </div>
+
+    {/* Right Section */}
+    <div className="flex flex-col items-center md:items-end gap-2">
+
+      <div className="flex items-center gap-4">
+
+        <a
+          href="https://github.com/manoj-cyb-45"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-cyan-400 transition-colors"
+        >
+          GitHub
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/manoj-kumar-p9972/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-cyan-400 transition-colors"
+          >
+            LinkedIn
+          </a>
+
+      </div>
+
+      <p className="text-gray-500 text-sm">
+        © 2026 AlgoLens · Built by{" "}
+        <span className="text-cyan-400 font-medium">
+          Manoj Kumar P
+        </span>
+      </p>
+
+    </div>
+
+  </div>
+</footer>
     </div>
   )
 }
