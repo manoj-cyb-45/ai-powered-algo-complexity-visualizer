@@ -10,16 +10,6 @@
 
 ---
 
-# 🚀 Live Demo
-
-### Frontend
-https://algo-complexity-visualizer.vercel.app/
-
-### Backend API
-https://ai-powered-algo-complexity-visualizer-production.up.railway.app/
-
----
-
 # 📌 Overview
 
 AlgoLens is a full-stack AI-powered algorithm complexity analysis platform that enables users to analyze, visualize, benchmark, and optimize algorithms interactively.
