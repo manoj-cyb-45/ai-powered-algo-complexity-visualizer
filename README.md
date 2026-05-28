@@ -4,8 +4,6 @@
 ![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square)
 ![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square)
 ![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47a248?style=flat-square)
-![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?style=flat-square)
-![Railway](https://img.shields.io/badge/Backend-Railway-purple?style=flat-square)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)
 
 ---
@@ -85,44 +83,6 @@ Vercel (Frontend)
 Railway (Backend API)
         ↓
 MongoDB Atlas (Database)
-```
-
----
-
-# 🌍 Production Deployment
-
-## Frontend Deployment (Vercel)
-
-```bash
-npm run build
-```
-
-Deploy the `dist/` folder to Vercel.
-
-Environment Variable:
-
-```env
-VITE_API_URL=https://ai-powered-algo-complexity-visualizer-production.up.railway.app
-```
-
----
-
-## Backend Deployment (Railway)
-
-Environment Variables:
-
-```env
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
-OPENROUTER_API_KEY=your_api_key
-FRONTEND_URL=https://algo-complexity-visualizer.vercel.app
-```
-
-Start Command:
-
-```bash
-npm start
-```
 
 ---
 
